@@ -1,8 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
 }
 
 android {
@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -49,29 +49,27 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // MockWebServer
-    testImplementation ("com.squareup.okhttp3:mockwebserver:4.10.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
     // Truth
-    testImplementation ("com.google.truth:truth:1.1.3")
+    testImplementation("com.google.truth:truth:1.1.3")
     // Mockito
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    testImplementation ("org.mockito:mockito-inline:3.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    testImplementation("org.mockito:mockito-inline:3.0.0")
     // Turbine
-    testImplementation ("app.cash.turbine:turbine:0.12.1")
+    testImplementation("app.cash.turbine:turbine:0.12.1")
 
     // Hilt
-    compileOnly ("com.google.dagger:hilt-android:2.45")
-    ksp ("com.google.dagger:hilt-compiler:2.45")
+    compileOnly("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-compiler:2.45")
 
     //Paging
-    implementation ("androidx.paging:paging-runtime:3.1.1")
+    implementation("androidx.paging:paging-runtime:3.1.1")
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
     //OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-
-
 }
