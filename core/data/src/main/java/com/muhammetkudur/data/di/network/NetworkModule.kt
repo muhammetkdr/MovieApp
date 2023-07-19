@@ -1,11 +1,13 @@
-package com.muhammetkudur.data.di
+package com.muhammetkudur.data.di.network
 
 import com.muhammetkudur.data.api.MovieService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -33,11 +35,16 @@ object NetworkModule {
 
     @Singleton
     @Provides
+    fun provideApiKeyInterceptor(): ApiKeyInterceptor = ApiKeyInterceptor()
+
+    @Singleton
+    @Provides
     fun provideHttpClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        apiKeyInterceptor: ApiKeyInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder().readTimeout(60, TimeUnit.SECONDS)
-            .addInterceptor(ApiKeyInterceptor())
+            .addInterceptor(apiKeyInterceptor)
             .connectTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor)
             .build()
@@ -69,4 +76,26 @@ object NetworkModule {
             .client(okHttpClient)
             .build()
             .create(MovieService::class.java)
+}
+
+@Singleton
+class ApiKeyInterceptor : Interceptor {
+
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val request = chain.request()
+
+        val url = request.url
+            .newBuilder()
+            .addQueryParameter(API_KEY_STRING, "d1f85d110b688bdc7c34ee9d5926f793")
+            .build()
+
+        val requestBuilder = request.newBuilder()
+            .url(url)
+
+        return chain.proceed(requestBuilder.build())
+    }
+
+    companion object {
+        private const val API_KEY_STRING = "api_key"
+    }
 }
