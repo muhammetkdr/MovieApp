@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.muhammetkudur.data.api.MovieService
-import com.muhammetkudur.data.dto.Movie
+import com.muhammetkudur.data.dto.TopRatedMovie
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ class MovieRemoteDataSourceImpl @Inject constructor(
     private val movieService: MovieService,
 ) : MovieRemoteDataSource {
 
-    override fun fetchTopRatedMovies(): Flow<PagingData<Movie>> =
+    override fun fetchTopRatedMovies(): Flow<PagingData<TopRatedMovie>> =
         Pager(
             config = PagingConfig(
                 pageSize = PAGE_SIZE, // ilk yüklemede kaç tane item yüklencek
