@@ -1,7 +1,7 @@
 package com.muhammetkudur.data.source.remote
 
 import androidx.paging.PagingData
-import com.muhammetkudur.data.dto.Movie
+import com.muhammetkudur.data.dto.TopRatedMovie
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -10,5 +10,5 @@ import kotlinx.coroutines.flow.Flow
  */
 
 interface MovieRemoteDataSource {
-    fun fetchTopRatedMovies(): Flow<PagingData<Movie>>
+    fun fetchTopRatedMovies(): Flow<PagingData<TopRatedMovie>>
 }
