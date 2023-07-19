@@ -1,6 +1,6 @@
 package com.muhammetkudur.data.api
 
-import com.muhammetkudur.data.dto.MovieResponse
+import com.muhammetkudur.data.dto.TopRatedMovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -15,7 +15,7 @@ interface MovieService {
     suspend fun fetchTopRatedMovies(
         @Query(LANGUAGE) language: String,
         @Query(PAGE) page: Int
-    ): MovieResponse
+    ): TopRatedMovieResponse
 
     companion object {
         private const val TOP_RATED = "movie/top_rated"
