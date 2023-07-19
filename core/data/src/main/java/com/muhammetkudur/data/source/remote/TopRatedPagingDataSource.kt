@@ -4,20 +4,21 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.muhammetkudur.common.ONE_VALUE
 import com.muhammetkudur.data.api.MovieService
-import com.muhammetkudur.data.dto.Movie
+import com.muhammetkudur.data.dto.TopRatedMovie
 import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
 /**
  *    Created By Muhammet KÜDÜR
  *    17.07.2023
  */
 
-class TopRatedMoviesPagingSource(
+class TopRatedMoviesPagingSource @Inject constructor(
     private val movieApi: MovieService
-): PagingSource<Int, Movie>() {
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
+): PagingSource<Int, TopRatedMovie>() {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TopRatedMovie> {
         return try {
             val pageNumber = params.key ?: STARTING_PAGE_INDEX
             if (pageNumber != STARTING_PAGE_INDEX) delay(LOAD_DELAY_MILLIS)
@@ -39,7 +40,7 @@ class TopRatedMoviesPagingSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, TopRatedMovie>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             val anchorPage = state.closestPageToPosition(anchorPosition)
             anchorPage?.prevKey?.plus(Int.ONE_VALUE) ?: anchorPage?.nextKey?.minus(Int.ONE_VALUE)
