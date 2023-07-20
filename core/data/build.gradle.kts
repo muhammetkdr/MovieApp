@@ -63,7 +63,7 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.45")
 
     //Paging
-    implementation("androidx.paging:paging-runtime:3.1.1")
+    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
