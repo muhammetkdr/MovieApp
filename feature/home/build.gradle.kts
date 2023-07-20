@@ -63,7 +63,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
 
     // Hilt
-    compileOnly("com.google.dagger:hilt-android:2.47")
+    implementation("com.google.dagger:hilt-android:2.47")
     kapt("com.google.dagger:hilt-compiler:2.47")
 
     //Paging
