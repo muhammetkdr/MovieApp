@@ -1,4 +1,4 @@
-package com.muhammetkudur
+package com.muhammetkudur.movieapp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
@@ -9,5 +9,4 @@ import dagger.hilt.android.HiltAndroidApp
  */
 
 @HiltAndroidApp
-class MovieApplication : Application() {
-}
+class MovieApplication : Application()
