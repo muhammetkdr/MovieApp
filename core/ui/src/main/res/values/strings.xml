@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="ERROR_MESSAGE">Error message</string>
+    <string name="Retry">Retry</string>
+</resources>
