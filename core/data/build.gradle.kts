@@ -59,8 +59,8 @@ dependencies {
     testImplementation("app.cash.turbine:turbine:0.12.1")
 
     // Hilt
-    compileOnly("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
+    compileOnly("com.google.dagger:hilt-android:2.47")
+    kapt("com.google.dagger:hilt-compiler:2.47")
 
     //Paging
     implementation("androidx.paging:paging-runtime-ktx:3.1.1")
