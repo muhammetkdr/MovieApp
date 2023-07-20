@@ -38,6 +38,11 @@ android {
     sourceSets {
         getByName("debug").res.srcDirs("$rootDir/navigation/src/main/sharedRes")
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
