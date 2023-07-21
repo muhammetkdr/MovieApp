@@ -22,7 +22,7 @@ class MovieRemoteDataSourceImpl @Inject constructor(
             config = PagingConfig(
                 pageSize = PAGE_SIZE, // ilk yüklemede kaç tane item yüklencek
                 enablePlaceholders = false,
-                initialLoadSize = 1, // scrolldan sonra her seferinde 10 item yükler
+                initialLoadSize = 2, // scrolldan sonra her seferinde 2 item yükler
             ),
             pagingSourceFactory = {
                 TopRatedMoviesPagingSource(movieService)
@@ -30,6 +30,6 @@ class MovieRemoteDataSourceImpl @Inject constructor(
         ).flow
 
     companion object {
-        private const val PAGE_SIZE = 1
+        private const val PAGE_SIZE = 2
     }
 }
