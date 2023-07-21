@@ -8,5 +8,6 @@ package com.muhammetkudur.domain.model
 data class TopRatedMovieEntity(
     val title: String,
     val posterUrl: String,
-    val overview: String
+    val overview: String,
+    val id : Int
 )

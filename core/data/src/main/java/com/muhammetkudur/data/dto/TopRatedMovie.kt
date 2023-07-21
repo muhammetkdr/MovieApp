@@ -12,5 +12,6 @@ data class TopRatedMovie(
     @field:Json(name = "poster_path") val posterUrl: String?,
     @field:Json(name = "popularity") val popularity: Double?,
     @field:Json(name = "overview") val overview: String?,
-    @field:Json(name ="release_date") val releaseDate: String?
+    @field:Json(name ="release_date") val releaseDate: String?,
+    @field:Json(name = "id") val id: Int?
 )

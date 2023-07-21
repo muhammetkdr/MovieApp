@@ -8,5 +8,6 @@ package com.muhammetkudur.ui.model
 data class TopRatedMovieUiData(
     val title: String,
     val posterUrl: String,
-    val overview: String
+    val overview: String,
+    val id: Int
 )
