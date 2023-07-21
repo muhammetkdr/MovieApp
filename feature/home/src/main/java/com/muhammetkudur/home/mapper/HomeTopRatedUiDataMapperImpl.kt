@@ -15,7 +15,8 @@ class HomeTopRatedUiDataMapperImpl @Inject constructor() : Mapper<TopRatedMovieE
         return TopRatedMovieUiData(
             title = input.title,
             posterUrl = input.posterUrl,
-            overview = input.overview
+            overview = input.overview,
+            id = input.id
         )
     }
 }

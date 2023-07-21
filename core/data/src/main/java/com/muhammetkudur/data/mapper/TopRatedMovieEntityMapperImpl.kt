@@ -1,6 +1,7 @@
 package com.muhammetkudur.data.mapper
 
 import com.muhammetkudur.common.EMPTY
+import com.muhammetkudur.common.ONE_VALUE
 import com.muhammetkudur.data.dto.TopRatedMovie
 import com.muhammetkudur.domain.mapper.Mapper
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
@@ -17,7 +18,8 @@ class TopRatedMovieEntityMapperImpl @Inject constructor() :
         return TopRatedMovieEntity(
             title = input.title ?: String.EMPTY,
             posterUrl = input.posterUrl ?: String.EMPTY,
-            overview = input.overview ?: String.EMPTY
+            overview = input.overview ?: String.EMPTY,
+            id = input.id ?: Int.ONE_VALUE
         )
     }
 }
