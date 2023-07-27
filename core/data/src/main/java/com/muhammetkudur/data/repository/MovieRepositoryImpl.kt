@@ -2,9 +2,12 @@ package com.muhammetkudur.data.repository
 
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.muhammetkudur.data.dto.TopRatedMovie
+import com.muhammetkudur.common.mapNetworkResult
+import com.muhammetkudur.common.networkresponse.NetworkResponse
+import com.muhammetkudur.data.dto.Movie
 import com.muhammetkudur.data.source.remote.MovieRemoteDataSource
 import com.muhammetkudur.domain.mapper.Mapper
+import com.muhammetkudur.domain.model.MovieDetailEntity
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
 import com.muhammetkudur.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
@@ -18,17 +21,24 @@ import javax.inject.Inject
 
 class MovieRepositoryImpl @Inject constructor(
     private val movieRemoteDataSource: MovieRemoteDataSource,
-    private val topRatedMovieMappar: Mapper<TopRatedMovie,TopRatedMovieEntity>
+    private val movieMapper: Mapper<Movie, TopRatedMovieEntity>,
+    private val detailMovieMapper: Mapper<Movie, MovieDetailEntity>
 ) : MovieRepository {
     override fun fetchTopRatedMovies(): Flow<PagingData<TopRatedMovieEntity>> {
         return movieRemoteDataSource.fetchTopRatedMovies().map { pagingData ->
-            pagingData.map {movie ->
+            pagingData.map { movie ->
                 mapTopRatedMovie(movie)
             }
         }
     }
 
-    private fun mapTopRatedMovie(movie: TopRatedMovie) : TopRatedMovieEntity{
-        return topRatedMovieMappar.map(movie)
+    override fun fetchMovieById(id: Int): Flow<NetworkResponse<MovieDetailEntity>> {
+        return movieRemoteDataSource.fetchMovieById(id).map {
+            it.mapNetworkResult { detailMovieMapper.map(this) }
+        }
+    }
+
+    private fun mapTopRatedMovie(movie: Movie): TopRatedMovieEntity {
+        return movieMapper.map(movie)
     }
 }
