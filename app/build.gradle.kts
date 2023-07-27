@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:ui"))
     implementation(project(":feature:home"))
+    implementation(project(":feature:detail"))
 
     // Android
     implementation("androidx.core:core-ktx:1.10.1")
