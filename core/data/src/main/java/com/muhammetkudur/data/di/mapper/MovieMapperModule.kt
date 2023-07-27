@@ -1,8 +1,10 @@
 package com.muhammetkudur.data.di.mapper
 
-import com.muhammetkudur.data.dto.TopRatedMovie
+import com.muhammetkudur.data.dto.Movie
+import com.muhammetkudur.data.mapper.MovieDetailEntityMapperImpl
 import com.muhammetkudur.data.mapper.TopRatedMovieEntityMapperImpl
 import com.muhammetkudur.domain.mapper.Mapper
+import com.muhammetkudur.domain.model.MovieDetailEntity
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
 import dagger.Binds
 import dagger.Module
@@ -22,6 +24,12 @@ abstract class MovieMapperModule {
     @ViewModelScoped
     abstract fun bindTopRatedMovieResponseToEntity(
         topRatedMovieEntityMapperimpl: TopRatedMovieEntityMapperImpl
-    ): Mapper<TopRatedMovie, TopRatedMovieEntity>
+    ): Mapper<Movie, TopRatedMovieEntity>
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindDetailMovieResponseToEntity(
+        movieDetailEntityMapperImpl: MovieDetailEntityMapperImpl
+    ): Mapper<Movie, MovieDetailEntity>
 
 }
