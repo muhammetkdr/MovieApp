@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
  *    17.07.2023
  */
 
-data class TopRatedMovie(
+data class Movie(
     @field:Json(name = "original_title") val title: String?,
     @field:Json(name = "poster_path") val posterUrl: String?,
     @field:Json(name = "popularity") val popularity: Double?,
