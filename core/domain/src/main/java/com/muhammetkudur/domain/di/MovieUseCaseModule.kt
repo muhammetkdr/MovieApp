@@ -1,7 +1,9 @@
 package com.muhammetkudur.domain.di
 
-import com.muhammetkudur.domain.usecase.GetTopRatedMoviesUseCase
-import com.muhammetkudur.domain.usecase.GetTopRatedMoviesUseCaseImpl
+import com.muhammetkudur.domain.usecase.detailmovieusecase.GetMovieDetailUseCase
+import com.muhammetkudur.domain.usecase.detailmovieusecase.GetMovieDetailUseCaseImpl
+import com.muhammetkudur.domain.usecase.topratedusecase.GetTopRatedMoviesUseCase
+import com.muhammetkudur.domain.usecase.topratedusecase.GetTopRatedMoviesUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,4 +23,7 @@ abstract class MovieUseCaseModule {
     @ViewModelScoped
     abstract fun bindMovieTopRatedMoviesUseCase(getTopRatedMoviesUseCaseImpl: GetTopRatedMoviesUseCaseImpl): GetTopRatedMoviesUseCase
 
+    @Binds
+    @ViewModelScoped
+    abstract fun bindDetailMovieUseCase(getMovieDetailUseCaseImpl: GetMovieDetailUseCaseImpl): GetMovieDetailUseCase
 }
