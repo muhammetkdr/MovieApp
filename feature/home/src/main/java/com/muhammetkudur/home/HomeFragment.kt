@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.moviepagingxml.ui.home.adapter.HomeTopRatedRVAdapter
+import androidx.navigation.fragment.findNavController
+import com.muhammetkudur.home.adapter.HomeTopRatedRVAdapter
 import com.muhammetkudur.home.databinding.FragmentHomeBinding
 import com.muhammetkudur.ui.common.collectFlow
-import com.muhammetkudur.ui.utils.PagingLoadStateAdapter
-import com.muhammetkudur.ui.utils.inflate
+import com.muhammetkudur.ui.utils.extensions.inflate
+import com.muhammetkudur.ui.utils.pagingloadstateadapter.PagingLoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -28,6 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         initAdapter()
         observeData()
+        adapterItemClick()
     }
 
     private fun observeData() {
@@ -41,5 +43,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             header = PagingLoadStateAdapter(adapter),
             footer = PagingLoadStateAdapter(adapter)
         )
+    }
+
+    private fun adapterItemClick() {
+        adapter.setOnItemClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it.id)
+            findNavController().navigate(action)
+        }
     }
 }
