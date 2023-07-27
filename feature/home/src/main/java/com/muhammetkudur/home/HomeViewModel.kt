@@ -7,7 +7,7 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.muhammetkudur.domain.mapper.Mapper
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
-import com.muhammetkudur.domain.usecase.GetTopRatedMoviesUseCase
+import com.muhammetkudur.domain.usecase.topratedusecase.GetTopRatedMoviesUseCase
 import com.muhammetkudur.ui.model.TopRatedMovieUiData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
