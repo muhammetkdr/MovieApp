@@ -17,7 +17,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class UiMapperModule {
+abstract class HomeUiMapperModule {
 
     @Binds
     @ViewModelScoped
