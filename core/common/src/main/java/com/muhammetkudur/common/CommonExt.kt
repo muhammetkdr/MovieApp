@@ -9,7 +9,7 @@ import com.muhammetkudur.common.networkresponse.NetworkResponse
 
 fun <I:Any,O:Any> NetworkResponse<I>.mapNetworkResult(mapper:I.()-> O): NetworkResponse<O>{
     return when(this){
-        is NetworkResponse.Error -> NetworkResponse.Error(this.exception)
+        is NetworkResponse.Error -> NetworkResponse.Error(this.error)
         is NetworkResponse.Success -> NetworkResponse.Success(mapper.invoke(this.data))
         NetworkResponse.Loading -> NetworkResponse.Loading
     }
