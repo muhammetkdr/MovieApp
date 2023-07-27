@@ -9,5 +9,19 @@
         android:name="com.muhammetkudur.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"
-        />
+        >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.muhammetkudur.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail"
+        >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
