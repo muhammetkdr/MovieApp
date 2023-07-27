@@ -1,4 +1,4 @@
-package com.example.moviepagingxml.ui.home.adapter
+package com.muhammetkudur.home.adapter
 
 import com.muhammetkudur.home.databinding.AdapterTopratedItemBinding
 import com.muhammetkudur.ui.base.BaseViewHolder

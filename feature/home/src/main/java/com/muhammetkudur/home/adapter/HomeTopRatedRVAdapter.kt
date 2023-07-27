@@ -1,10 +1,10 @@
-package com.example.moviepagingxml.ui.home.adapter
+package com.muhammetkudur.home.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import com.muhammetkudur.home.databinding.AdapterTopratedItemBinding
 import com.muhammetkudur.ui.model.TopRatedMovieUiData
-import com.muhammetkudur.ui.utils.inflateAdapterItem
+import com.muhammetkudur.ui.utils.extensions.inflateAdapterItem
 import javax.inject.Inject
 
 class HomeTopRatedRVAdapter @Inject constructor() :

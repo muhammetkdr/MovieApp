@@ -1,4 +1,4 @@
-package com.example.moviepagingxml.ui.home.adapter
+package com.muhammetkudur.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.muhammetkudur.ui.model.TopRatedMovieUiData
