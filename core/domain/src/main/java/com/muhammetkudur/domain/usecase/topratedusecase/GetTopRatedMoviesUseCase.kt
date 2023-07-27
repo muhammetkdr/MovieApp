@@ -1,4 +1,4 @@
-package com.muhammetkudur.domain.usecase
+package com.muhammetkudur.domain.usecase.topratedusecase
 
 import androidx.paging.PagingData
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
