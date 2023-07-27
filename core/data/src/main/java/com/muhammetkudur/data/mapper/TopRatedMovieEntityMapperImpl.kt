@@ -1,8 +1,7 @@
 package com.muhammetkudur.data.mapper
 
-import com.muhammetkudur.common.EMPTY
 import com.muhammetkudur.common.ONE_VALUE
-import com.muhammetkudur.data.dto.TopRatedMovie
+import com.muhammetkudur.data.dto.Movie
 import com.muhammetkudur.domain.mapper.Mapper
 import com.muhammetkudur.domain.model.TopRatedMovieEntity
 import javax.inject.Inject
@@ -13,12 +12,12 @@ import javax.inject.Inject
  */
 
 class TopRatedMovieEntityMapperImpl @Inject constructor() :
-    Mapper<TopRatedMovie, TopRatedMovieEntity> {
-    override fun map(input: TopRatedMovie): TopRatedMovieEntity {
+    Mapper<Movie, TopRatedMovieEntity> {
+    override fun map(input: Movie): TopRatedMovieEntity {
         return TopRatedMovieEntity(
-            title = input.title ?: String.EMPTY,
-            posterUrl = input.posterUrl ?: String.EMPTY,
-            overview = input.overview ?: String.EMPTY,
+            title = input.title.orEmpty(),
+            posterUrl = input.posterUrl.orEmpty(),
+            overview = input.overview.orEmpty(),
             id = input.id ?: Int.ONE_VALUE
         )
     }
