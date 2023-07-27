@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
  *    17.07.2023
  */
 
-data class TopRatedMovieResponse(
+data class MovieResponse(
     @field:Json(name = "page") val page: Int,
-    @field:Json(name = "results") val results: List<TopRatedMovie>
+    @field:Json(name = "results") val results: List<Movie>
 )
