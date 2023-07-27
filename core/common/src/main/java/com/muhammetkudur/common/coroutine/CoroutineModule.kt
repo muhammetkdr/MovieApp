@@ -4,10 +4,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Qualifier
 import javax.inject.Singleton
-import kotlin.coroutines.CoroutineContext
 
 /**
  *    Created By Muhammet KÜDÜR
@@ -21,22 +21,22 @@ object CoroutineModule {
     @Dispatcher(DispatcherType.Io)
     @Provides
     @Singleton
-    fun provideDispatcheIo(): CoroutineContext = Dispatchers.IO
+    fun provideDispatcheIo(): CoroutineDispatcher = Dispatchers.IO
 
     @Dispatcher(DispatcherType.Unconfined)
     @Provides
     @Singleton
-    fun provideDispatcherUncf(): CoroutineContext = Dispatchers.Unconfined
+    fun provideDispatcherUncf(): CoroutineDispatcher = Dispatchers.Unconfined
 
     @Dispatcher(DispatcherType.Default)
     @Provides
     @Singleton
-    fun provideDispatcherDefault(): CoroutineContext = Dispatchers.Default
+    fun provideDispatcherDefault(): CoroutineDispatcher = Dispatchers.Default
 
     @Dispatcher(DispatcherType.Main)
     @Provides
     @Singleton
-    fun provideDispatcherMain(): CoroutineContext = Dispatchers.Main
+    fun provideDispatcherMain(): CoroutineDispatcher = Dispatchers.Main
 
 }
 
