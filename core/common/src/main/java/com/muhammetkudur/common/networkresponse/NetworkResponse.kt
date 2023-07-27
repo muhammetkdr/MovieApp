@@ -7,6 +7,6 @@ package com.muhammetkudur.common.networkresponse
 
 sealed class NetworkResponse<out T : Any> {
     data class Success<out T : Any>(val data: T) : NetworkResponse<T>()
-    data class Error(val exception: Exception) : NetworkResponse<Nothing>()
+    data class Error(val error: String) : NetworkResponse<Nothing>()
     object Loading : NetworkResponse<Nothing>()
 }
