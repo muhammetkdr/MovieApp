@@ -1,4 +1,4 @@
-package com.muhammetkudur.ui.utils
+package com.muhammetkudur.ui.utils.pagingloadstateadapter
 
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -7,6 +7,7 @@ import androidx.paging.LoadStateAdapter
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.muhammetkudur.ui.databinding.AdapterNetworkstateItemBinding
+import com.muhammetkudur.ui.utils.extensions.inflateAdapterItem
 
 /**
  *    Created By Muhammet KÜDÜR

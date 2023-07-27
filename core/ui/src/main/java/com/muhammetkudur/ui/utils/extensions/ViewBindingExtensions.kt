@@ -1,4 +1,4 @@
-package com.muhammetkudur.ui.utils
+package com.muhammetkudur.ui.utils.extensions
 
 import android.view.LayoutInflater
 import android.view.View
