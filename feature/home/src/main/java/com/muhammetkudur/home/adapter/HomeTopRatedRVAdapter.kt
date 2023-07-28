@@ -16,7 +16,7 @@ class HomeTopRatedRVAdapter @Inject constructor() :
 
     override fun onBindViewHolder(holder: HomeTopRatedItemViewHolder, position: Int) {
         getItem(position)?.let { characterUiData ->
-            holder.bind(characterUiData,position)
+            holder.onBind(characterUiData)
             holder.itemView.setOnClickListener {
                 onItemClickListener?.invoke(characterUiData)
             }

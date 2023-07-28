@@ -8,6 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
  *    17.07.2023
  */
 
-abstract class BaseViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    abstract fun bind(item: T, position: Int)
+abstract class BaseViewHolder<T: Any>(view: View) : RecyclerView.ViewHolder(view) {
+    abstract fun onBind(data: T)
 }

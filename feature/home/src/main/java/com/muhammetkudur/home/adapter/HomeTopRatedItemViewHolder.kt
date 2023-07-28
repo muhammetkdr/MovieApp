@@ -7,7 +7,7 @@ import com.muhammetkudur.ui.model.TopRatedMovieUiData
 class HomeTopRatedItemViewHolder(
     private val binding: AdapterTopratedItemBinding
 ) : BaseViewHolder<TopRatedMovieUiData>(binding.root) {
-    override fun bind(item: TopRatedMovieUiData, position: Int) {
-       binding.data = item
+    override fun onBind(data: TopRatedMovieUiData) {
+        binding.data = data
     }
 }
