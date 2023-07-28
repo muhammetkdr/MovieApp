@@ -32,7 +32,7 @@ This app uses MVVM (Model-View-ViewModel) Clean Architecture
 - [Retrofit](https://square.github.io/retrofit/) A type-safe HTTP client for Android and Java
 - [OkHttp](https://square.github.io/okhttp/) An HTTP client that efficiently make network requests
 - <a href="https://github.com/square/moshi">Moshi</a> to serialize and deserialize JSON data when communicating with web services or when storing data locally
-- <a href="https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=tr">Paging3</a> a library that simplifies efficient pagination in RecyclerViews, enabling smooth scrolling and loading large data sets in a paginated manner. 
+- <a href="https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=tr">Paging</a> a library that simplifies efficient pagination in RecyclerViews, enabling smooth scrolling and loading large data sets in a paginated manner. 
 - <a href="https://developer.android.com/topic/libraries/architecture/navigation/">Navigation</a> to manage fragments
 - <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel</a> This is a kind of storage for UI related data which you can save from UI changes(like configuration change)
 - <a href="https://developer.android.com/topic/libraries/data-binding">Data Binding</a> to connect views in your layout to data sources in your app's architecture.
