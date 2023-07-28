@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_background">#AA8B8B</color>
+    <color name="dark_background">#C9302E2E</color>
+
+    <color name="light_overview_text_color">#002739</color>
+    <color name="dark_overview_text_color">#0965AE</color>
+
+    <color name="light_title_text_color">#193E5C</color>
+    <color name="dark_title_text_color">#328ACF</color>
+
+    <color name="light_text_color">#0E324E</color>
+    <color name="dark_text_color">#337BB5</color>
+
+    <color name="light_button_color">#433131</color>
+    <color name="dark_button_color">#C97A7272</color>
+
+    <color name="light_button_text_color">#000000</color>
+    <color name="dark_button_text_color">#C9FFFFFF</color>
+</resources>

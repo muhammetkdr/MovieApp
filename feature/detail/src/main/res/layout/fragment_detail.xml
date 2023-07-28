@@ -11,7 +11,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        >
 
         <ImageView
             android:id="@+id/ivPosterPath"
@@ -22,7 +24,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/detail_iv_content_desc"
+            />
 
         <TextView
             android:id="@+id/tvMovieTitle"
@@ -31,6 +35,7 @@
             android:gravity="center"
             android:textSize="24sp"
             android:padding="4dp"
+            android:textColor="@color/title_text_color"
             android:text="@{detailUiData.title}"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +49,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="14sp"
+            android:textColor="@color/overview_text_color"
             android:text="@{detailUiData.overview}"
             tools:text="@string/lorem_ipsum"
             android:layout_marginTop="10dp"

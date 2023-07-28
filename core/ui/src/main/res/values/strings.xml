@@ -4,4 +4,7 @@
     <string name="previous">Previous</string>
     <string name="ERROR_MESSAGE">Error message</string>
     <string name="Retry">Retry</string>
+    <string name="home_iv_content_desc">Movie poster image view</string>
+    <string name="detail_iv_content_desc">Movie poster image view</string>
+
 </resources>

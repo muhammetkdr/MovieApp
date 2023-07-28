@@ -20,7 +20,9 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/home_iv_content_desc"
+            />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -30,9 +32,8 @@
             android:gravity="center"
             android:padding="4dp"
             android:text="@{data.title}"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/title_text_color"
             android:textSize="12sp"
             tools:text="SADŞSAKÖDSA" />
-
     </LinearLayout>
 </layout>
