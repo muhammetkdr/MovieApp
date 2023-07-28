@@ -41,7 +41,12 @@ This app uses MVVM (Model-View-ViewModel) Clean Architecture
 - <a href="https://developer.android.com/topic/libraries/data-binding">Data Binding</a> to connect views in your layout to data sources in your app's architecture.
 - <a href="https://developer.android.com/topic/libraries/view-binding">View Binding</a> a generated binding class is created for each XML layout file in your app
 - <a href="https://bumptech.github.io/glide">Glide</a> Popular open-source library for loading and caching images in Android applications.
-
+- Testing
+  - [Mockito](https://site.mockito.org/) A mocking framework that tastes really good. It lets you write beautiful tests with a clean & simple API
+  - [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) A scriptable web server for testing HTTP clients
+  - [Truth](https://truth.dev/) A library for performing assertions in tests
+  - [Turbine](https://github.com/cashapp/turbine) A small testing library for kotlinx.coroutines Flow
+    
 ## Contact With Me  
 <p align="left">
 <a href="https://www.linkedin.com/in/muhammet-k%C3%BCd%C3%BCr/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="muhammetküdür" height="30" width="40" /></a>
