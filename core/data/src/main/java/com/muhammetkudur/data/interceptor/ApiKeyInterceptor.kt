@@ -3,14 +3,12 @@ package com.muhammetkudur.data.interceptor
 import com.muhammetkudur.data.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
-import javax.inject.Singleton
 
 /**
  *    Created By Muhammet KÜDÜR
  *    17.07.2023
  */
 
-@Singleton
 class ApiKeyInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
