@@ -57,22 +57,18 @@ object NetworkModule {
     @Provides
     fun provideRetrofitInstance(
         okHttpClient: OkHttpClient,
-        baseUrl: String,
         moshiConverterFactory: MoshiConverterFactory
     ): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl).client(okHttpClient)
-            .addConverterFactory(moshiConverterFactory).build()
+        return Retrofit.Builder()
+            .baseUrl(MOVIE_BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(moshiConverterFactory)
+            .build()
     }
 
     @Singleton
     @Provides
     fun provideMovieApiService(
-        okHttpClient: OkHttpClient,
-        moshiConverterFactory: MoshiConverterFactory
-    ): MovieService = Retrofit.Builder()
-            .baseUrl(MOVIE_BASE_URL)
-            .addConverterFactory(moshiConverterFactory)
-            .client(okHttpClient)
-            .build()
-            .create(MovieService::class.java)
+        retrofit: Retrofit
+    ): MovieService = retrofit.create(MovieService::class.java)
 }
