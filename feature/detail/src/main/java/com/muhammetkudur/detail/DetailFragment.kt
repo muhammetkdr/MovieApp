@@ -44,7 +44,7 @@ class DetailFragment : BaseFragment(R.layout.fragment_detail) {
                 is UiState.Error -> {
                     requireView().showSnackbar(it.message)
                 }
-                UiState.Idle -> {}
+                UiState.Idle -> Unit
             }
         }
     }
