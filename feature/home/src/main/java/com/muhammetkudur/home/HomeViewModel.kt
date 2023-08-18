@@ -22,12 +22,12 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getTopRatedMoviesUseCase: GetTopRatedMoviesUseCase,
-    private val topRatedUiDataMapper: Mapper<TopRatedMovieEntity,TopRatedMovieUiData>
-): ViewModel() {
+    private val topRatedUiDataMapper: Mapper<TopRatedMovieEntity, TopRatedMovieUiData>
+) : ViewModel() {
 
-    fun getTopRatedMoviesData() : Flow<PagingData<TopRatedMovieUiData>>{
+    fun getTopRatedMoviesData(): Flow<PagingData<TopRatedMovieUiData>> {
         return getTopRatedMoviesUseCase.invoke().map { pagingTopRatedData ->
-            pagingTopRatedData.map {topRatedEntity->
+            pagingTopRatedData.map { topRatedEntity ->
                 topRatedUiDataMapper.map(topRatedEntity)
             }
         }.cachedIn(viewModelScope)
