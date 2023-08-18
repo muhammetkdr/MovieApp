@@ -58,7 +58,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.15.1")
 
     //Paging
-    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
+    implementation("androidx.paging:paging-runtime-ktx:3.2.0")
 
     //lottie
     implementation ("com.airbnb.android:lottie:6.1.0")
