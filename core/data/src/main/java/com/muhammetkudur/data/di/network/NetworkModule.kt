@@ -2,6 +2,7 @@ package com.muhammetkudur.data.di.network
 
 import com.muhammetkudur.data.api.MovieService
 import com.muhammetkudur.data.interceptor.ApiKeyInterceptor
+import com.muhammetkudur.data.interceptor.NetworkStatusInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,10 +41,12 @@ object NetworkModule {
     @Provides
     fun provideHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
-        apiKeyInterceptor: ApiKeyInterceptor
+        apiKeyInterceptor: ApiKeyInterceptor,
+        networkStatusInterceptor: NetworkStatusInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder().readTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(apiKeyInterceptor)
+            .addInterceptor(networkStatusInterceptor)
             .connectTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor)
             .build()
