@@ -67,7 +67,7 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.47")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
 
     //Paging
     implementation("androidx.paging:paging-runtime-ktx:3.2.0")

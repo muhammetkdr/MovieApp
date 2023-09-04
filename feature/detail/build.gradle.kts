@@ -62,7 +62,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.47")
