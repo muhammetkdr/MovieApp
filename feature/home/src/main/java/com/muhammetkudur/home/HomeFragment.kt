@@ -33,7 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun observeData() {
-        collectFlow(viewModel.getTopRatedMoviesData()){
+        collectFlow(viewModel.getTopRatedMoviesData()) {
             adapter.submitData(it)
         }
     }

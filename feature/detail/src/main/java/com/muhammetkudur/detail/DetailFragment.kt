@@ -8,7 +8,9 @@ import com.muhammetkudur.common.UiState
 import com.muhammetkudur.detail.databinding.FragmentDetailBinding
 import com.muhammetkudur.ui.base.BaseFragment
 import com.muhammetkudur.ui.common.collectFlow
+import com.muhammetkudur.ui.common.setMovieImage
 import com.muhammetkudur.ui.common.showSnackbar
+import com.muhammetkudur.ui.model.MovieDetailUiData
 import com.muhammetkudur.ui.utils.extensions.inflate
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,16 +38,27 @@ class DetailFragment : BaseFragment(R.layout.fragment_detail) {
     }
 
     private fun observeDetailUiData() {
-        collectFlow(viewModel.detailMovieData){
+        collectFlow(viewModel.detailMovieData) {
             when (it) {
                 is UiState.Success -> {
-                    binder.detailUiData = it.data
+                    setUiState(it.data)
                 }
+
                 is UiState.Error -> {
                     requireView().showSnackbar(it.message)
                 }
+
                 UiState.Idle -> Unit
             }
         }
     }
+
+    private fun setUiState(data: MovieDetailUiData) {
+        with(binder) {
+            ivPosterPath.setMovieImage(data.posterUrl)
+            tvMovieTitle.text = data.title
+            tvOverview.text = data.overview
+        }
+    }
+
 }

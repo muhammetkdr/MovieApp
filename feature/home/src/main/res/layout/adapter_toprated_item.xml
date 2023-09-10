@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
 
-    <data>
-        <variable
-            name="data"
-            type="com.muhammetkudur.ui.model.TopRatedMovieUiData" />
-    </data>
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/home_iv_content_desc"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/ivPoster"
-            setMovieImage="@{data.posterUrl}"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="@string/home_iv_content_desc"
-            />
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="@{data.title}"
-            android:textColor="@color/title_text_color"
-            android:textSize="12sp"
-            tools:text="AAAAAAAAAAAAAAAAAAAAAAAA" />
-    </LinearLayout>
-</layout>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/title_text_color"
+        android:textSize="12sp"
+        tools:text="AAAAAAAAAAAAAAAAAAAAAAAA" />
+</LinearLayout>
