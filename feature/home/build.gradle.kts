@@ -65,7 +65,7 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:2.47")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
 
     //Paging
     implementation("androidx.paging:paging-runtime-ktx:3.2.1")
