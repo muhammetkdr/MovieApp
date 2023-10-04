@@ -2,11 +2,11 @@ package com.muhammetkudur.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.muhammetkudur.home.adapter.HomeTopRatedRVAdapter
 import com.muhammetkudur.home.databinding.FragmentHomeBinding
+import com.muhammetkudur.ui.base.BaseFragment
 import com.muhammetkudur.ui.common.collectFlow
 import com.muhammetkudur.ui.utils.extensions.inflate
 import com.muhammetkudur.ui.utils.pagingloadstateadapter.PagingLoadStateAdapter
@@ -18,10 +18,10 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : BaseFragment(R.layout.fragment_home) {
 
     private val binder by inflate(FragmentHomeBinding::bind)
-    private val viewModel by viewModels<HomeViewModel>()
+    override val viewModel by viewModels<HomeViewModel>()
     private val adapter by lazy { HomeTopRatedRVAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
