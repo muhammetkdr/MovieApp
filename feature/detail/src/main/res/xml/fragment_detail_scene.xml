@@ -14,8 +14,8 @@
                android:alpha="0" />
            <KeyAttribute
                motion:motionTarget="@+id/ivPosterPath"
-               motion:framePosition="50"
-               android:alpha="0" />
+               motion:framePosition="80"
+               android:alpha="0.5" />
            <KeyAttribute
                motion:motionTarget="@+id/ivPosterPath"
                motion:framePosition="100"
@@ -24,6 +24,30 @@
                motion:motionTarget="@+id/ivPosterPath"
                motion:framePosition="100"
                android:scaleY="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="69"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="25"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="25"
+               android:scaleX="0.6" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="25"
+               android:scaleY="0.6" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="69"
+               android:scaleX="0.6" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ivPosterPath"
+               motion:framePosition="69"
+               android:scaleY="0.6" />
        </KeyFrameSet>
         <OnSwipe
             motion:touchAnchorId="@+id/ivPosterPath"
