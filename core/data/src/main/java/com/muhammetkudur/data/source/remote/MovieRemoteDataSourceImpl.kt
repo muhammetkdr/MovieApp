@@ -10,6 +10,7 @@ import com.muhammetkudur.data.api.MovieService
 import com.muhammetkudur.data.dto.Movie
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
@@ -21,7 +22,7 @@ import javax.inject.Inject
 
 class MovieRemoteDataSourceImpl @Inject constructor(
     private val movieService: MovieService,
-    @Dispatcher(DispatcherType.Io) private val ioDispatcher : CoroutineDispatcher
+    @Dispatcher(DispatcherType.Io) private val ioDispatcher: CoroutineDispatcher
 ) : MovieRemoteDataSource {
 
     override fun fetchTopRatedMovies(): Flow<PagingData<Movie>> =
@@ -37,19 +38,17 @@ class MovieRemoteDataSourceImpl @Inject constructor(
         ).flow
 
     override fun fetchMovieById(id: Int): Flow<NetworkResponse<Movie>> = flow {
-        try {
-            emit(NetworkResponse.Loading)
-            val response = movieService.fetchMovieById(id = id)
-            if(response.isSuccessful){
-                response.body()?.let {
-                    emit(NetworkResponse.Success(it))
-                } ?: emit(NetworkResponse.Error(NO_DATA))
-            }else{
-                emit(NetworkResponse.Error(NO_DATA))
-            }
-        }catch (e: Exception){
-            emit(NetworkResponse.Error(e.message ?: NO_DATA))
+        emit(NetworkResponse.Loading)
+        val response = movieService.fetchMovieById(id = id)
+        if (response.isSuccessful) {
+            response.body()?.let {
+                emit(NetworkResponse.Success(it))
+            } ?: emit(NetworkResponse.Error(NO_DATA))
+        } else {
+            emit(NetworkResponse.Error(NO_DATA))
         }
+    }.catch {
+        emit(NetworkResponse.Error(it.message ?: NO_DATA))
     }.flowOn(ioDispatcher)
 
     companion object {
