@@ -46,7 +46,7 @@ dependencies {
     //Android
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
 
     //Test
     testImplementation("junit:junit:4.13.2")
@@ -60,7 +60,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.47")
