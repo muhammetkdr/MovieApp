@@ -9,7 +9,6 @@ import com.muhammetkudur.domain.usecase.detailmovieusecase.GetMovieDetailUseCase
 import com.muhammetkudur.ui.base.BaseViewModel
 import com.muhammetkudur.ui.model.MovieDetailUiData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onCompletion
@@ -41,7 +40,7 @@ class DetailViewModel @Inject constructor(
     }
 
     private fun handleMovieDetailDataMapping(movieDetailData: NetworkResponse<MovieDetailEntity>) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch{
             when (movieDetailData) {
                 is NetworkResponse.Error -> {
                     _detailMovieData.emit(UiState.Error(movieDetailData.error))
