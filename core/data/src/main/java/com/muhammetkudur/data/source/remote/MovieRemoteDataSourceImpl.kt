@@ -36,6 +36,7 @@ class MovieRemoteDataSourceImpl @Inject constructor(
                 TopRatedMoviesPagingSource(movieService)
             }
         ).flow
+            .flowOn(ioDispatcher)
 
     override fun fetchMovieById(id: Int): Flow<NetworkResponse<Movie>> = flow {
         emit(NetworkResponse.Loading)
