@@ -1,7 +1,10 @@
 [versions]
 android-gradle = "8.1.2"
 kotlin = "1.9.0"
-
+kotlin-ksp = "1.9.10-1.0.13"
+library-android = "8.1.2"
+hilt = "2.47"
+nav-safeargs = "2.5.3"
 
 androidx-junit = "1.1.5"
 appcompat = "1.6.1"
@@ -59,3 +62,7 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle"}
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
+ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin-ksp"}
+android-library = { id = "com.android.library", version.ref = "library-android"}
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "nav-safeargs"}
