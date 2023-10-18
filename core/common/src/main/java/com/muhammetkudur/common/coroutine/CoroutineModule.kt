@@ -3,11 +3,11 @@ package com.muhammetkudur.common.coroutine
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Qualifier
-import javax.inject.Singleton
 
 /**
  *    Created By Muhammet KÜDÜR
@@ -15,27 +15,27 @@ import javax.inject.Singleton
  */
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object CoroutineModule {
 
     @Dispatcher(DispatcherType.Io)
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideDispatcheIo(): CoroutineDispatcher = Dispatchers.IO
 
     @Dispatcher(DispatcherType.Unconfined)
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideDispatcherUncf(): CoroutineDispatcher = Dispatchers.Unconfined
 
     @Dispatcher(DispatcherType.Default)
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideDispatcherDefault(): CoroutineDispatcher = Dispatchers.Default
 
     @Dispatcher(DispatcherType.Main)
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideDispatcherMain(): CoroutineDispatcher = Dispatchers.Main
 
 }
@@ -44,7 +44,7 @@ object CoroutineModule {
 @Qualifier
 annotation class Dispatcher(val type: DispatcherType)
 
-enum class DispatcherType{
+enum class DispatcherType {
     Main,
     Io,
     Default,
