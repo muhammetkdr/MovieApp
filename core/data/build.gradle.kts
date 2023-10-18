@@ -49,37 +49,38 @@ dependencies {
     implementation(project(":core:domain"))
 
     //android
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
 
     //test
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
 
     // MockWebServer
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
+    testImplementation(libs.mockwebserver)
     // Truth
-    testImplementation("com.google.truth:truth:1.1.3")
+    testImplementation(libs.truth)
     // Mockito
-    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    testImplementation("org.mockito:mockito-inline:3.0.0")
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockito.inline)
     // Turbine
-    testImplementation("app.cash.turbine:turbine:0.12.1")
+    testImplementation(libs.turbine)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.47")
-    ksp("com.google.dagger:hilt-compiler:2.47")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     //Paging
-    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
+    implementation(libs.androidx.paging.runtime.ktx)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
 
     //OkHttp
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 }
