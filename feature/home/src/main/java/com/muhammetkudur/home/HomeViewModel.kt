@@ -11,6 +11,7 @@ import com.muhammetkudur.ui.base.BaseViewModel
 import com.muhammetkudur.ui.model.TopRatedMovieUiData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
@@ -27,13 +28,15 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     fun getTopRatedMoviesData(): Flow<PagingData<TopRatedMovieUiData>> {
-        return getTopRatedMoviesUseCase.invoke()
-            .onStart { showIndicator() }
-            .map { pagingTopRatedData ->
-                hideIndicator()
-                pagingTopRatedData.map { topRatedEntity ->
-                    topRatedUiDataMapper.map(topRatedEntity)
-                }
-            }.cachedIn(viewModelScope)
+        return flow {
+            getTopRatedMoviesUseCase.invoke()
+                .onStart { showIndicator() }
+                .map { pagingTopRatedData ->
+                    hideIndicator()
+                    pagingTopRatedData.map { topRatedEntity ->
+                        topRatedUiDataMapper.map(topRatedEntity)
+                    }
+                }.cachedIn(viewModelScope)
+        }
     }
 }

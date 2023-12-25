@@ -12,7 +12,7 @@ import javax.inject.Inject
  *    17.07.2023
  */
 
-abstract class BaseFragment(@LayoutRes val layoutId: Int) : Fragment(layoutId) {
+abstract class BaseFragment(@LayoutRes private val layoutId: Int) : Fragment(layoutId) {
 
     @Inject
     lateinit var indicatorPresenter: IndicatorPresenter

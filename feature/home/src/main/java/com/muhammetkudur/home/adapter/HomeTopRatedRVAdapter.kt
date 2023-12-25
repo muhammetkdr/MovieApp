@@ -8,9 +8,7 @@ import com.muhammetkudur.ui.utils.extensions.inflateAdapterItem
 import javax.inject.Inject
 
 class HomeTopRatedRVAdapter @Inject constructor() :
-    PagingDataAdapter<TopRatedMovieUiData, HomeTopRatedItemViewHolder>(
-        HomeTopRatedDiffCallBack()
-    ) {
+    PagingDataAdapter<TopRatedMovieUiData, HomeTopRatedItemViewHolder>(HomeTopRatedDiffCallBack()) {
 
     private var onItemClickListener: ((TopRatedMovieUiData) -> Unit)? = null
 
@@ -21,7 +19,6 @@ class HomeTopRatedRVAdapter @Inject constructor() :
                 onItemClickListener?.invoke(characterUiData)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeTopRatedItemViewHolder {

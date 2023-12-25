@@ -10,5 +10,5 @@ import kotlinx.coroutines.flow.Flow
  */
 
 interface GetTopRatedMoviesUseCase {
-    operator fun invoke(): Flow<PagingData<TopRatedMovieEntity>>
+    suspend operator fun invoke(): Flow<PagingData<TopRatedMovieEntity>>
 }
